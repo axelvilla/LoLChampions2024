@@ -14,11 +14,13 @@ La base de datos contiene un catálogo completo de 168 campeones de League of Le
 - Características de combate (alcance y recursos)
 - Valores numéricos de estadísticas fundamentales
 
+![CSV](csv-image.jpg)
+
 ## Configuración del Entorno
 Para implementar esta base de datos en tu sistema local, sigue estos pasos:
 
 ```bash
-git clone https://github.com/tu-usuario/league-champions-db
+git clone https://github.com/axelvilla/LoLChampions2024.git
 ```
 
 Importa el esquema de base de datos en tu servidor MySQL:
@@ -39,7 +41,7 @@ El proceso de diseño comenzó con el análisis del archivo fuente CSV, identifi
 La implementación del esquema se realizó mediante la siguiente declaración:
 
 ```sql
-CREATE DATABASE finaldb;
+CREATE DATABASE lolchampionsdataset;
 ```
 
 El desarrollo del esquema contempló la creación de entidades principales y tablas de referencia, utilizando tipos de datos específicos y estableciendo relaciones mediante claves foráneas para mantener la integridad referencial.
@@ -147,13 +149,6 @@ CREATE TABLE `championclass` (
 );
 ```
 
-## Aplicación de Formas Normales
-
-1. **Primera Forma Normal (1NF)**: Se eliminaron valores repetidos y se establecieron entidades independientes.
-
-2. **Segunda Forma Normal (2NF)**: Se removieron dependencias parciales mediante la creación de tablas de catálogo para difficulty, range_type, resource_type, roles y classes.
-
-3. **Tercera Forma Normal (3NF)**: Se eliminaron dependencias transitivas implementando tablas de unión many-to-many para roles y classes.
 
 ## Ejemplos de Consultas
 
@@ -266,5 +261,5 @@ ORDER BY Total_Campeones DESC;
 - **Framework Frontend**: Next.js con TypeScript
 - **Componentes UI**: shadcn/ui
 
-## Información del Proyecto
-Este desarrollo forma parte de un proyecto académico para la asignatura de Base de Datos 2, centrado en la aplicación práctica de conceptos de normalización y diseño de esquemas relacionales.
+## Creador
+Este trabajo fue realizado por Gomez Axel.
