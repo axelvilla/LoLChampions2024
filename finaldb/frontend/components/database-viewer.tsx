@@ -273,11 +273,7 @@ export function DatabaseViewer() {
                           <span className="text-muted-foreground ml-2">
                             ({column.type})
                           </span>
-                          {column.key && (
-                            <Badge variant="secondary" className="ml-2 text-xs">
-                              {column.key}
-                            </Badge>
-                          )}
+                          
                         </div>
                       ))}
                     </div>
