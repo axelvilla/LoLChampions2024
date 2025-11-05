@@ -156,17 +156,18 @@ A partir de la creación de todas las tablas, se puede comenzar a importar los r
 ## Insersión de registros a la base de datos
 
 Para poder insertar los datos en cada una de las tablas, primero se realizó la importacion del archivo .CSV a la base de datos dando segundo click en la misma y haciendo click en "Table Data Import Wizard".
-Esto nos crea una tabla padre con todos los datos del archivo .CSV y a partir de la misma, podemos comenzar a insertar los datos en cada una de las tablas.
-
 
 ![Ejemplo importacion de datos](image.png)
 
+Esto nos crea una tabla padre con todos los datos del archivo .CSV.
+
+A partir de la misma, podemos comenzar a insertar los datos en cada una de las tablas con el comando:
 
 ```sql
-  INSERT INTO rangetype(descrip)
-  SELECT distinct `Range type` 
-  FROM finaldbtest.`league of legend champions 2024` 
-  WHERE `Range type` is not null
+  INSERT INTO tabala(x)
+  SELECT distinct `columnatablapadre` 
+  FROM dbname.`nametablapadre` 
+  WHERE `columnatablapadre` is not null
 ```
 
 ## Ejemplos de Consultas
