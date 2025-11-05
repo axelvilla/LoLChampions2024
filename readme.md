@@ -155,7 +155,9 @@ A partir de la creación de todas las tablas, se puede a comenzar a insertar los
 
 ```sql
   INSERT INTO rangetype(descrip)
-  SELECT distinct `Range type` from finaldbtest.`league of legend champions 2024` where `Range type` is not null
+  SELECT distinct `Range type` 
+  FROM finaldbtest.`league of legend champions 2024` 
+  WHERE `Range type` is not null
 ```
 
 ## Ejemplos de Consultas
