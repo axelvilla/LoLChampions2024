@@ -5,6 +5,9 @@ Este trabajo tiene como propósito principal desarrollar habilidades en el dise�
 
 El proyecto aborda la transformación de datos estructurados desde un archivo CSV hacia un sistema de gestión de base de datos MySQL, implementando técnicas de normalización para optimizar el almacenamiento y consulta de información.
 
+La base de datos fue obtenida a través de la descarga de un archivo csv de la página de Kaggle.
+- https://www.kaggle.com/datasets/marwant1/league-of-legends-champions-2024?select=League+of+legend+Champions+2024.csv
+
 La base de datos contiene un catálogo completo de 168 campeones de League of Legends con los siguientes atributos:
 - Identificación y denominación de cada campeón
 - Clasificación por categorías y posiciones de juego
@@ -148,7 +151,12 @@ CREATE TABLE `championclass` (
   CONSTRAINT `championclass_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `class` (`class_id`) ON DELETE CASCADE
 );
 ```
+A partir de la creación de todas las tablas, se puede a comenzar a insertar los datos en cada una de las tablas.
 
+```sql
+  INSERT INTO rangetype(descrip)
+  SELECT distinct `Range type` from finaldbtest.`league of legend champions 2024` where `Range type` is not null
+```
 
 ## Ejemplos de Consultas
 
@@ -263,3 +271,5 @@ ORDER BY Total_Campeones DESC;
 
 ## Creador
 Este trabajo fue realizado por Gomez Axel.
+
+
