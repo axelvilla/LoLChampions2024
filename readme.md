@@ -151,7 +151,16 @@ CREATE TABLE `championclass` (
   CONSTRAINT `championclass_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `class` (`class_id`) ON DELETE CASCADE
 );
 ```
-A partir de la creación de todas las tablas, se puede a comenzar a insertar los datos en cada una de las tablas.
+A partir de la creación de todas las tablas, se puede comenzar a importar los registros a la base de datos.
+
+## Insersión de registros a la base de datos
+
+Para poder insertar los datos en cada una de las tablas, primero se realizó la importacion del archivo .CSV a la base de datos dando segundo click en la misma y haciendo click en "Table Data Import Wizard".
+Esto nos crea una tabla padre con todos los datos del archivo .CSV y a partir de la misma, podemos comenzar a insertar los datos en cada una de las tablas.
+
+
+![Ejemplo importacion de datos](image.png)
+
 
 ```sql
   INSERT INTO rangetype(descrip)
